@@ -17,14 +17,20 @@
       <p class="text-sm font-semibold text-gray-600">Pick a category</p>
 
       <div class="flex items-center w-full mx-auto justify-center gap-5">
-        <div class="flex flex-col items-center bg-white p-5 w-full rounded-md">
-          <input class="bg-green-500" type="radio" name="" id="" />
+        <label
+          class="flex flex-col items-center bg-white p-5 w-full rounded-md"
+        >
+          <input class="hidden" type="radio" name="" id="" />
+          <span class="bubble business"></span>
           <p class="text-sm">Business</p>
-        </div>
-        <div class="flex flex-col items-center bg-white p-5 w-full rounded-md">
-          <input type="radio" name="" id="" />
+        </label>
+        <label
+          class="flex flex-col items-center bg-white p-5 w-full rounded-md"
+        >
+          <input class="hidden" type="radio" name="" id="" />
+          <span class="bubble personal"></span>
           <p class="text-sm">Personal</p>
-        </div>
+        </label>
       </div>
     </div>
   </div>
