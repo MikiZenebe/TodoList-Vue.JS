@@ -10,6 +10,5 @@ import ListTodo from "./components/ListTodo.vue";
   >
     <Header />
     <AddTodo />
-    <ListTodo />
   </div>
 </template>

@@ -1,9 +1,48 @@
 <script setup>
 import { ref, computed, watch, onMounted } from "vue";
+import ListTodo from "./ListTodo.vue";
 
 const todos = ref([]);
 const inputContent = ref("");
 const inputCategory = ref(null);
+
+const addTodo = () => {
+  if (inputContent.value.trim() === "" || inputCategory.value === null) {
+    return;
+  }
+
+  todos.value.push({
+    content: inputContent.value,
+    category: inputCategory.value,
+    createdAt: new Date().getTime(),
+    done: false,
+  });
+
+  inputContent.value = "";
+  inputCategory.value = null;
+};
+
+watch(
+  todos,
+  (newVal) => {
+    localStorage.setItem("todos", JSON.stringify(newVal));
+  },
+  { deep: true }
+);
+
+const todoAsc = computed(() =>
+  todos.value.sort((a, b) => {
+    return b.createdAt - a.createdAt;
+  })
+);
+
+onMounted(() => {
+  todos.value = JSON.parse(localStorage.getItem("todos")) || [];
+});
+
+const removeTodo = (todo) => {
+  todos.value = todos.value.filter((t) => t !== todo);
+};
 </script>
 
 <template>
@@ -26,7 +65,7 @@ const inputCategory = ref(null);
 
         <div class="flex items-center w-full mx-auto justify-center gap-5">
           <label
-            class="flex flex-col items-center bg-white p-5 w-full rounded-md"
+            class="cursor-pointer flex flex-col items-center bg-white p-5 w-full rounded-md"
           >
             <input
               class="hidden"
@@ -39,7 +78,7 @@ const inputCategory = ref(null);
             <p class="text-sm">Business</p>
           </label>
           <label
-            class="flex flex-col items-center bg-white p-5 w-full rounded-md"
+            class="cursor-pointer flex flex-col items-center bg-white p-5 w-full rounded-md"
           >
             <input
               class="hidden"
@@ -62,5 +101,7 @@ const inputCategory = ref(null);
         </button>
       </div>
     </form>
+
+    <ListTodo :todos="todoAsc" :removeTodo="removeTodo" />
   </div>
 </template>
