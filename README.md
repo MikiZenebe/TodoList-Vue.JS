@@ -1,8 +1,23 @@
-# Vue 3 + Vite
+![screencapture-todo-list-vue-js-neon-vercel-app-2024-04-13-21_04_55](https://github.com/MikiZenebe/TodoList-Vue.JS/assets/102186185/27dff4f1-d787-4cf6-a65b-62abb18fb523)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# TodoList
 
-## Recommended IDE Setup
+🔥🔥🔥Features🔥🔥🔥
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-# TodoList-Vue.JS
+✅ Create TodoList
+
+✅ Edit TodoList
+
+✅ Delete TodoList
+
+---------------------------------------------
+
+🔥🔥🔥Technologies🔥🔥🔥
+
+✅ Vue.JS
+
+✅ Tailwind CSS
+
+---------------------------------------------
+
+🔥🔥 https://todo-listvue.vercel.app 🔥🔥
